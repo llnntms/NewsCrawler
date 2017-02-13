@@ -1,6 +1,5 @@
 import mailer
 import crawler
-import getpass
 
 import sys
 
