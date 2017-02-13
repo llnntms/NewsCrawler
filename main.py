@@ -2,10 +2,13 @@ import mailer
 import crawler
 import getpass
 
+import sys
+
 articleList = crawler.getArticleList()
 
-ID = input("Google ID: ")
-PW = getpass.getpass("Google PW: ")
-To = input("To: ")
+smtpLoginID = sys.argv[1]
+smtpLoginPW = sys.argv[2]
 
-mailer.sendEmail(articleList, ID, PW, To, False)
+sendTo = sys.argv[3]
+
+mailer.sendEmail(articleList, smtpLoginID, smtpLoginPW, sendTo, False)
